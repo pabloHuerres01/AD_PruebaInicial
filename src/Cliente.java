@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Vector;
 
 public class Cliente {
 	//private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -23,7 +24,7 @@ public class Cliente {
 	
 	//Metodos
 	
-	public static Cliente nuevocliente()
+	public Cliente nuevocliente()
 	{
 		Cliente nuevoCliente = new Cliente();
 		System.out.println("Introduce NIE o NIF dependiendo de lo que ingreses");
@@ -97,6 +98,13 @@ public class Cliente {
             System.out.println("Error al escribir en el archivo: " + e.getMessage());
         }
     }
+    
+    public Vector<Integer> notificacionesEn()
+    {
+    	Vector<Integer> vector = new Vector<>(12);
+    	return vector;
+    	
+    }
 	
 	//Getters y Setters
 	public String getNombre() {
@@ -150,7 +158,26 @@ public class Cliente {
 				+ suscripcion + ", pagoPref=" + pagoPref + ", fechaNac=" + fechaNac + ", id=" + id + "]";
 	}
 	
-	//
+	//Constructores
+	public Cliente(String nombre, String direccion, String telefono, boolean suscripcion, TipoPago pagoPref,
+			Date fechaNac, Documentacion id) {
+		this.nombre = nombre;
+		this.direccion = direccion;
+		this.telefono = telefono;
+		this.suscripcion = suscripcion;
+		this.pagoPref = pagoPref;
+		this.fechaNac = fechaNac;
+		this.id = id;
+	}
+	public Cliente()
+	{
+		
+	}
+	
+	
+	
+	
+	
 	
 	
 	
