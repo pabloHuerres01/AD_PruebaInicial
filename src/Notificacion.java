@@ -10,6 +10,13 @@ public class Notificacion {
 	private Date fecha = new Date();
 	private String mensaje;
 	
+	
+	public Notificacion(long id, Date fecha, String mensaje) {
+		super();
+		this.id = id;
+		this.fecha = fecha;
+		this.mensaje = mensaje;
+	}
 	//Getters Setters
 	public long getId() {
 		return id;
